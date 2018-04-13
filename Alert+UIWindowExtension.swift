@@ -82,7 +82,7 @@ class Alert {
    *   - Retorno:
    *    - Nulo. O comportamento esperado é a exibição de um Alert com o texto inserido em "title" e em "msg", com botão "OK". Após o botão "OK" seja selecionado, executa o código de "function".
    */
-  static func show(title: String, msg: String, view: UIViewController? = nil, function: (()->()) = { }) {
+  static func show(title: String, msg: String, view: UIViewController? = nil, function: @escaping (()->()) = { }) {
     let alertController = UIAlertController(title: title, message: msg, preferredStyle: .alert)
     
     let okAction = UIAlertAction(title: "OK", style: .default) { UIAlertAction in function()  }
